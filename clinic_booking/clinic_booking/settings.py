@@ -35,7 +35,7 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS=['clinic-booking-backend-task.onrender.com','localhost']
 
 
 # Application definition
