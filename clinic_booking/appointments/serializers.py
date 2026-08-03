@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Appointment
-
+from patients.serializers import PatientSerializer
+from doctors.serializers import DoctorSerializer
 
 class CreateAppointmentSer(serializers.ModelSerializer):
     class Meta:
@@ -13,3 +14,11 @@ class CancelAppointmentSer(serializers.Serializer):
 class RescheduleAppointmentSer(serializers.Serializer):
     date = serializers.DateField()
     start_time = serializers.TimeField()
+
+class AppointmentDetailSer(serializers.ModelSerializer):
+    patient = PatientSerializer(read_only=True)
+    doctor = DoctorSerializer(read_only=True)
+
+    class Meta:
+        model = Appointment
+        fields = ["id", "patient", "doctor", "date", "start_time", "status", "cancel_reason", "created_at"]

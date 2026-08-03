@@ -11,7 +11,6 @@ from .validators import (
     validate_cancelled,
 )
 
-
 def book_appointment(validated_data):
     doctor = validated_data["doctor"]
     patient = validated_data["patient"]
