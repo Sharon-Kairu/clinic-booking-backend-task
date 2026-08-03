@@ -7,12 +7,12 @@ class Appointment(models.Model):
         ('Booked','booked'),
         ('Cancelled','cancelled')
     ]
-    patient=models.ForeignKey(Patient, related_name='Patient-Appointment')
-    doctor=models.ForeignKey(Doctor, related_name='Doctor-apointment')
+    patient=models.ForeignKey(Patient, related_name='PatientAppointment', on_delete=models.CASCADE)
+    doctor=models.ForeignKey(Doctor, related_name='DoctorApointment',on_delete=models.CASCADE)
     date=models.DateField()
-    start_time=models.DateField
-    status=models.CharField(choices=STATUS, default='Booked')
-    cancel_reason=models.TextField()
-    created_at=models.DateTimeField(auto_now=True)
+    start_time=models.TimeField()
+    status=models.CharField(choices=STATUS, default='Booked',max_length=10)
+    cancel_reason = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
