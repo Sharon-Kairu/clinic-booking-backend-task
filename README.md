@@ -110,7 +110,7 @@ Using a fixed duration simplifies availability calculations and prevents overlap
 
 # Deployment & CI/CD
 
-**Public URL:** https://your-app-name.onrender.com
+**Public URL:** https://clinic-booking-backend-task.onrender.com/
 
 
 **Database:** MySQL, hosted on Aiven.
