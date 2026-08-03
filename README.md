@@ -106,7 +106,3 @@ This keeps the views lightweight, improves maintainability, and allows business 
 Appointments are fixed at 30-minute intervals, matching the requirements provided in the assessment.
 
 Using a fixed duration simplifies availability calculations and prevents overlapping appointments
-
-# Test Results and screenshots
-1. POST /appointments
-
