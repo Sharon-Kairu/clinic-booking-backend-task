@@ -24,6 +24,9 @@ from doctors.models import Doctor
 
 
 class BookAppointmentView(APIView):
+    def get(self, request):
+        appointments = Appointment.objects.all().order_by("-created_at")
+        return Response(AppointmentDetailSer(appointments, many=True).data)
     def post(self, request):
         serializer = CreateAppointmentSer(data=request.data)
         serializer.is_valid(raise_exception=True)
