@@ -16,10 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv(BASE_DIR / ".env")
 
-SECRET_KEY = 'django-insecure-$*(c188gr@aw49&%gaae!_lzk!nh59fayls-%pac)x&e%7t5)2'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+DEBUG = False
 
 DATABASES = {
     'default': {
